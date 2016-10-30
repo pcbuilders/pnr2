@@ -177,7 +177,7 @@ function logHttp(item, callback) {
       id: id
     },
     form: {
-      comment: item.comment
+      content: item.comment
     }
   }, function(e, r, b) {
     if (e || r.statusCode !== 200) {
