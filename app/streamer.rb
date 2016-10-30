@@ -59,7 +59,7 @@ class Streamer
     @obj = obj
     if !running?
       if live_server = get_live_server(resp)
-        `nohup livestreamer -Q --yes-run-as-root -o #{fullpath} "hls://#{live_server}/#{@obj['user_id']}.m3u8" best > /dev/null 2>&1 &`
+        `nohup livestreamer -Q --yes-run-as-root -o #{fullpath} --hls-timeout 180 --hls-segment-timeout 30 "hls://#{live_server}/#{@obj['user_id']}.m3u8" best > /dev/null 2>&1 &`
         streamed
       else
         error
