@@ -169,7 +169,7 @@ class Streamer
   end
 
   def error(comment='Live ended')
-    api_request(:do => 'error', :id => @obj['id'], :comment => comment)
+    api_request(:do => 'error', :id => @obj['id'], :content => comment)
     @logger.warn([@obj['id'], 'error', comment].join(': '))
     return false
   end
